@@ -1,0 +1,36 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None  #Make next none
+
+class LinkedList:
+    def __init__(self):
+        self.head = None  #Make head none
+
+    #Insert node at beginning
+    def insert(self, data):
+        node = Node(data)
+        node.next = self.head
+        self.head = node
+
+    #Display linked list
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end="->")
+            current = current.next
+        print("None")  #End of list
+
+
+list=LinkedList()
+list.insert("The Great Gatsby")
+list.insert("1984")
+list.insert("To Kill a Mockingbird")
+list.insert("Moby Dick")
+list.insert("War and Peace")
+list.insert("Pride and Prejudice")
+list.display()
+
+
+
+#Question 1: Pride and Prejudice->War and Peace->Moby Dick->To Kill a Mockingbird->1984->The Great Gatsby->None
